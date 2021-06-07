@@ -7,11 +7,16 @@ import hello.core.member.MemoryMemberRepository;
 
 public class OrderServiceimpl implements OrderService{
 
-    private final MemberRepository memberRepository = new MemoryMemberRepository();
+    private final MemberRepository memberRepository;
     //    private final DiscountPolicy discountPolicy = new FixDiscountPolicy();
 //    private final DiscountPolicy discountPolicy = new RateDiscountPolicy();
     // final 은 무조건 값이 할당되어야 하니 삭제
-    private DiscountPolicy discountPolicy;
+    private final DiscountPolicy discountPolicy;
+
+    public OrderServiceimpl(MemberRepository memberRepository, DiscountPolicy discountPolicy) {
+        this.memberRepository = memberRepository;
+        this.discountPolicy = discountPolicy;
+    }
 
     @Override
     public Order createOrder(Long memberId, String itemName, int itemPrice) {
