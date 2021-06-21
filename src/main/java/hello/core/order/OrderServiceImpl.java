@@ -5,7 +5,7 @@ import hello.core.member.Member;
 import hello.core.member.MemberRepository;
 import hello.core.member.MemoryMemberRepository;
 
-public class OrderServiceimpl implements OrderService{
+public class OrderServiceImpl implements OrderService{
 
     private final MemberRepository memberRepository;
     //    private final DiscountPolicy discountPolicy = new FixDiscountPolicy();
@@ -13,7 +13,7 @@ public class OrderServiceimpl implements OrderService{
     // final 은 무조건 값이 할당되어야 하니 삭제
     private final DiscountPolicy discountPolicy;
 
-    public OrderServiceimpl(MemberRepository memberRepository, DiscountPolicy discountPolicy) {
+    public OrderServiceImpl(MemberRepository memberRepository, DiscountPolicy discountPolicy) {
         this.memberRepository = memberRepository;
         this.discountPolicy = discountPolicy;
     }
