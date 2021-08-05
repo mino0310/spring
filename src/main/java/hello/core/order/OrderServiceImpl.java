@@ -18,6 +18,7 @@ public class OrderServiceImpl implements OrderService{
 
     @Autowired
     public OrderServiceImpl(MemberRepository memberRepository, DiscountPolicy discountPolicy) {
+        System.out.println("memberRepository = " + memberRepository + ", discountPolicy = " + discountPolicy);
         this.memberRepository = memberRepository;
         this.discountPolicy = discountPolicy;
     }
@@ -27,7 +28,7 @@ public class OrderServiceImpl implements OrderService{
         Member member = memberRepository.findById(memberId);
         int discountPrice = discountPolicy.discount(member, itemPrice);
 
-        return new Order(memberId, itemName, itemPrice, discountPrice);
+        return new Order(memberId, itemName, itemPricㅌㅌe, discountPrice);
     }
 
     //테스트 용도
