@@ -1,10 +1,10 @@
-package hello.spring_advanced;
+package hello.advanced;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class SpringAdvancedApplicationTests {
+class AdvancedApplicationTests {
 
 	@Test
 	void contextLoads() {

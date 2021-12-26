@@ -1,13 +1,13 @@
-package hello.spring_advanced;
+package hello.advanced;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class SpringAdvancedApplication {
+public class AdvancedApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(SpringAdvancedApplication.class, args);
+		SpringApplication.run(AdvancedApplication.class, args);
 	}
 
 }
