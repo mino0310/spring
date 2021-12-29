@@ -49,4 +49,59 @@ public class ContextV1Test {
         ContextV1 context2 = new ContextV1(strategyLogic2);
         context2.execute();
     }
+
+    /**
+     * 전략 패턴, 익명 내부 클래스 1
+     */
+    @Test
+    void StrategyV2() {
+        Strategy strategyLogic1 = new Strategy() {
+            @Override
+            public void call() {
+                log.info("비즈니스 로직 1 실행");
+            }
+        };
+        log.info("strategyLogic1={}", strategyLogic1.getClass());
+        ContextV1 context1 = new ContextV1(strategyLogic1);
+        context1.execute();
+
+        Strategy strategyLogic2 = new Strategy() {
+            @Override
+            public void call() {
+                log.info("비즈니스 로직 2 실행");
+            }
+        };
+        log.info("strategyLogic2={}", strategyLogic2.getClass());
+        ContextV1 context2 = new ContextV1(strategyLogic2);
+        context2.execute();
+    }
+
+    @Test
+    void StrategyV3() {
+        ContextV1 context1 = new ContextV1(new Strategy() {
+            @Override
+            public void call() {
+                log.info("비즈니스 로직 1 실행");
+            }
+        });
+        context1.execute();
+
+        ContextV1 context2 = new ContextV1(new Strategy() {
+            @Override
+            public void call() {
+                log.info("비즈니스 로직 2 실행");
+            }
+        });
+        context2.execute();
+    }
+
+    // 람다로. 미쳐버렸구만..
+    @Test
+    void StrategyV4() {
+        ContextV1 context1 = new ContextV1(() -> log.info("비즈니스 로직 1 실행"));
+        context1.execute();
+
+        ContextV1 context2 = new ContextV1(() -> log.info("비즈니스 로직 2 실행"));
+        context2.execute();
+    }
 }
