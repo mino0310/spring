@@ -13,7 +13,7 @@ public class JdkDynamicProxyTest {
     void dynamicA() {
         AInterface target = new AImpl();
         TimeInvocationHandler handler = new TimeInvocationHandler(target);
-        AInterface proxy = (AInterface) Proxy.newProxyInstance(AInterface.class.getClassLoader(), new Class[]{AInterface.class}, handler);
+        AInterface pro9xy = (AInterface) Proxy.newProxyInstance(AInterface.class.getClassLoader(), new Class[]{AInterface.class}, handler);
         proxy.call();
         log.info("targetClass={}", target.getClass());
         log.info("proxyClass={}", proxy.getClass());
