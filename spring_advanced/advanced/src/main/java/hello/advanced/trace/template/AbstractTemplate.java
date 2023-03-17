@@ -4,7 +4,8 @@ import hello.advanced.trace.TraceStatus;
 import hello.advanced.trace.logtrace.LogTrace;
 
 public abstract class AbstractTemplate<T> {
-    
+
+    // LogTraceConfig 에서 의존관계 직접 설정
     private final LogTrace trace;
 
     public AbstractTemplate(LogTrace trace) {

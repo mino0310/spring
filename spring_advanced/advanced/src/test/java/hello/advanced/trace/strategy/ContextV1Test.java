@@ -18,9 +18,7 @@ public class ContextV1Test {
 
     private void logic1() {
         long startTime = System.currentTimeMillis();
-        // 비즈니스 로직이짐
         log.info("비즈니스 로직 1 실행");
-        // 비즈니스 로직 종료했숨
         long endTime = System.currentTimeMillis();
         long resultTime = endTime - startTime;
         log.info("resultTime={}ms", resultTime);
@@ -28,9 +26,7 @@ public class ContextV1Test {
 
     private void logic2() {
         long startTime = System.currentTimeMillis();
-        // 비즈니스 로직이짐
         log.info("비즈니스 로직 2 실행");
-        // 비즈니스 로직 종료했숨
         long endTime = System.currentTimeMillis();
         long resultTime = endTime - startTime;
         log.info("resultTime={}ms", resultTime);
@@ -41,12 +37,10 @@ public class ContextV1Test {
      */
     @Test
     void strategyV1() {
-        Strategy strategyLogic1 = new StrategyLogic1();
-        ContextV1 context1 = new ContextV1(strategyLogic1);
+        ContextV1 context1 = new ContextV1(new StrategyLogic1());
         context1.execute();
 
-        Strategy strategyLogic2 = new StrategyLogic2();
-        ContextV1 context2 = new ContextV1(strategyLogic2);
+        ContextV1 context2 = new ContextV1(new StrategyLogic2());
         context2.execute();
     }
 
@@ -95,7 +89,6 @@ public class ContextV1Test {
         context2.execute();
     }
 
-    // 람다로. 미쳐버렸구만..
     @Test
     void StrategyV4() {
         ContextV1 context1 = new ContextV1(() -> log.info("비즈니스 로직 1 실행"));

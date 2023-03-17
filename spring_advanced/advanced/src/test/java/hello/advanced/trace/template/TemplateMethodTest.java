@@ -52,6 +52,7 @@ public class TemplateMethodTest {
      */
     @Test
     void templateMethodV2() {
+
         AbstractTemplate template1 = new AbstractTemplate() {
             @Override
             protected void call() {

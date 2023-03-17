@@ -15,7 +15,7 @@ public class FiledLogTrace implements LogTrace{
 
     @Override
     public TraceStatus begin(String message) {
-        syncTraceId();
+        syncTraceId(); // 없으면 새로 생성, 있으면 기존 것에 +1해서 traceHolder 에 저장.
         TraceId traceId = traceIdHolder;
         Long startTimeMs = System.currentTimeMillis();
         log.info("[{}] {}{}", traceId.getId(), addSpace(START_PREFIX, traceId.getLevel()), message);

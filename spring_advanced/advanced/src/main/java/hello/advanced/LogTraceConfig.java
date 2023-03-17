@@ -1,5 +1,6 @@
 package hello.advanced;
 
+import hello.advanced.trace.logtrace.FiledLogTrace;
 import hello.advanced.trace.logtrace.LogTrace;
 import hello.advanced.trace.logtrace.ThreadLocalLogTrace;
 import org.springframework.context.annotation.Bean;
@@ -10,6 +11,9 @@ public class LogTraceConfig {
 
     @Bean
     public LogTrace logTrace() {
+
+//        return new FiledLogTrace();
         return new ThreadLocalLogTrace();
     }
+
 }

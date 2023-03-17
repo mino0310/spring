@@ -22,7 +22,6 @@ public class OrderControllerV4 {
             protected String call() {
                 orderService.orderItem(itemId);
                 return "ok";
-
             }
         };
         return template.execute("OrderController.request()");
